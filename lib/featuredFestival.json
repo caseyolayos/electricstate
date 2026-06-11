@@ -1,0 +1,4 @@
+{
+  "_comment": "Slug of the currently featured festival. Update this to change the featured event. Set to null to disable the featured section.",
+  "slug": "lightning-in-a-bottle"
+}

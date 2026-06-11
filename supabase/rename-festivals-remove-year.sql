@@ -1,0 +1,19 @@
+-- ============================================================
+-- Remove year suffixes from festival names + add images
+-- Run in: Supabase Dashboard → SQL Editor → New Query
+-- ============================================================
+
+UPDATE public.festivals SET name = 'Coachella',           slug = 'coachella',                image_url = 'https://media.coachella.com/content/seo_images/795/EBn21kXwRGMWDHIFsOpxoc2DgUFFdcZ0IknKjGSS.jpg' WHERE name = 'Coachella 2026';
+UPDATE public.festivals SET name = 'ARC Music Festival',  slug = 'arc-music-festival',       image_url = 'https://arcmusicfestival.com/wp-content/uploads/2024/03/ARClogo2024_BLK.svg'                         WHERE name = 'ARC Music Festival 2026';
+UPDATE public.festivals SET name = 'EDC Orlando',         slug = 'edc-orlando'                                                                                                                                    WHERE name = 'EDC Orlando 2026';
+UPDATE public.festivals SET name = 'Countdown NYE',       slug = 'countdown-nye',            image_url = 'https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/sites/59/2026/04/27112827/csc_2026_mk_ps_fs_seo_1200x630_r01.jpg' WHERE name = 'Countdown NYE 2026';
+UPDATE public.festivals SET name = 'Audiotistic Bay Area',slug = 'audiotistic-bay-area'                                                                                                                           WHERE name = 'Audiotistic Bay Area 2026';
+UPDATE public.festivals SET name = 'North Coast Music Festival', slug = 'north-coast-music-festival', image_url = 'https://northcoastfestival.com/wp-content/uploads/2025/12/Share.jpg'                          WHERE name = 'North Coast Music Festival 2026';
+UPDATE public.festivals SET name = 'Wakaan Music Festival',slug = 'wakaan-music-festival',   image_url = 'https://wakaanfestival.com/wp-content/uploads/2026/04/Share-1024x576.jpg'                              WHERE name = 'Wakaan Music Festival 2026';
+UPDATE public.festivals SET name = 'III Points',          slug = 'iii-points',               image_url = 'https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/sites/72/2026/04/22123729/iiipoints_2026_mk_lu_phase1_fs_seo_1200x630_r01.jpg' WHERE name = 'III Points 2026';
+UPDATE public.festivals SET name = 'Decadence Arizona',   slug = 'decadence-arizona',        image_url = 'https://decadencearizona.com/wp-content/uploads/2026/03/261230-31-Decadence-FB-Event_Presale.jpg'      WHERE name = 'Decadence Arizona 2026';
+UPDATE public.festivals SET name = 'Project GLOW',        slug = 'project-glow',             image_url = 'https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/sites/109/2026/01/06111047/pgdc_2026_mk_an_fest_site_seo_1200x630_r02.jpg' WHERE name = 'Project GLOW 2026';
+UPDATE public.festivals SET name = 'Forbidden Kingdom',   slug = 'forbidden-kingdom',        image_url = 'https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/sites/84/2026/04/29183010/fk_2027_mk_ps_fest_site_seo_1200x630_r02.jpg' WHERE name = 'Forbidden Kingdom 2027';
+UPDATE public.festivals SET name = 'Same Same But Different', slug = 'same-same-but-different'                                                                                                                    WHERE name = 'Same Same But Different 2026';
+UPDATE public.festivals SET name = 'Hulaween',            slug = 'hulaween',                 image_url = 'https://hulaween.com/wp-content/uploads/2026/03/HL26_SocialShare_1200x675.png'                         WHERE name = 'Hulaween 2026';
+UPDATE public.festivals SET name = 'Shambhala Music Festival', slug = 'shambhala-music-festival'                                                                                                                  WHERE name = 'Shambhala Music Festival 2026';

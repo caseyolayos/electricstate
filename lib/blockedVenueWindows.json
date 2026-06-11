@@ -1,0 +1,17 @@
+{
+  "comment": "TM events at these venues within these date windows are suppressed — we have curated festival listings instead.",
+  "windows": [
+    {
+      "venueName": "Empire Polo Club",
+      "dateStart": "2027-04-09",
+      "dateEnd": "2027-04-18",
+      "reason": "Coachella Weekend 1 + Weekend 2 — covered by our curated listings"
+    },
+    {
+      "venueName": "Waterfront Park",
+      "dateStart": "2026-06-27",
+      "dateEnd": "2026-06-28",
+      "reason": "Into the Horizon Festival — covered by our curated listing"
+    }
+  ]
+}

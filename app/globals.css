@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --electric: #C8FF00;
+  --neon: #C8FF00;
+  --navy-dark: #000000;
+  --navy: #0A0A0A;
+  --purple: #C8FF00;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #050505;
+  color: white;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb { background: #C8FF0044; border-radius: 2px; }
+
+/* ─── Glass ──────────────────────────────────────────────────────────────── */
+/* Base frosted-glass panel: layered gradient + stronger blur + inner glow  */
+.glass {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Event detail page card — richer glassmorphism with ambient green edge glow */
+.event-card {
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.055) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow:
+    0 0 0 1px rgba(200, 255, 0, 0.04),
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(200, 255, 0, 0.03);
+}
+
+/* Green-tinted glass: active states, festival cards, featured highlights */
+.glass-green {
+  background: linear-gradient(
+    145deg,
+    rgba(200, 255, 0, 0.09) 0%,
+    rgba(200, 255, 0, 0.03) 100%
+  );
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(200, 255, 0, 0.2);
+  border-radius: 16px;
+  box-shadow:
+    0 4px 32px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(200, 255, 0, 0.08),
+    inset 0 1px 0 rgba(200, 255, 0, 0.12),
+    0 0 40px rgba(200, 255, 0, 0.06);
+}
+
+/* ─── Typography ─────────────────────────────────────────────────────────── */
+/* Actual gradient text (was solid green before) */
+.gradient-text {
+  background: linear-gradient(135deg, #C8FF00 0%, #A8D900 60%, #C8FF00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glow utilities ─────────────────────────────────────────────────────── */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(200, 255, 0, 0.4), 0 0 60px rgba(200, 255, 0, 0.15);
+}
+
+.glow-green-sm {
+  box-shadow: 0 0 12px rgba(200, 255, 0, 0.3);
+}
+
+.glow-green-md {
+  box-shadow: 0 0 24px rgba(200, 255, 0, 0.25), 0 0 60px rgba(200, 255, 0, 0.08);
+}
+
+/* Glow on active tab underlines */
+.tab-glow {
+  box-shadow: 0 2px 10px rgba(200, 255, 0, 0.6), 0 0 20px rgba(200, 255, 0, 0.2);
+}
+
+/* ─── Ambient textures ───────────────────────────────────────────────────── */
+/* Subtle noise overlay — add to card children */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+.hero-gradient {
+  background: linear-gradient(-45deg, #050505, #0A0A0A, #080808, #050505);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; box-shadow: 0 0 20px rgba(200,255,0,0.3); }
+  50% { opacity: 0.7; box-shadow: 0 0 40px rgba(200,255,0,0.15); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-slide-up { animation: slideUp 0.5s ease forwards; }
+.animate-fade-in  { animation: fadeIn 0.3s ease forwards; }
+.animate-pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+
+/* Skeleton shimmer */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.05) 25%,
+    rgba(255,255,255,0.1) 50%,
+    rgba(255,255,255,0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.toast-xp { animation: slideUp 0.3s ease, fadeIn 0.3s ease; }
+
+/* Active tab underline glow — add to the border-b-2 element */
+.active-tab {
+  color: #C8FF00;
+  border-color: #C8FF00;
+  text-shadow: 0 0 12px rgba(200,255,0,0.5);
+  filter: drop-shadow(0 2px 6px rgba(200,255,0,0.4));
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }

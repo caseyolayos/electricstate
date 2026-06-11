@@ -1,0 +1,59 @@
+{
+  "id": "/",
+  "name": "Electric State Passport",
+  "short_name": "ES Passport",
+  "description": "Your passport to the Electric State — discover shows, check in, earn status.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#C8FF00",
+  "orientation": "portrait",
+  "categories": ["entertainment", "music", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/hero-bg.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Electric State Passport — Discover Events"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Discover Events",
+      "url": "/",
+      "description": "Browse tonight's shows near you"
+    },
+    {
+      "name": "My Passport",
+      "url": "/passport",
+      "description": "View your XP, badges, and check-ins"
+    }
+  ]
+}

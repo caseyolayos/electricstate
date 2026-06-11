@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1242">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1242px;
+    height: 2688px;
+    background: #000;
+    font-family: -apple-system, 'SF Pro Display', Inter, sans-serif;
+    color: #fff;
+    overflow: hidden;
+  }
+  .header-label {
+    background: #C8FF00;
+    color: #000;
+    font-size: 28px;
+    font-weight: 900;
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .status-bar {
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .passport-hero {
+    background: linear-gradient(180deg, #0d1a00 0%, #000 100%);
+    padding: 40px 48px 50px;
+    text-align: center;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .passport-title { font-size: 32px; color: #C8FF00; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px; }
+  .xp-ring {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 8px solid #C8FF00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    background: #0d1a00;
+    box-shadow: 0 0 40px rgba(200,255,0,0.3);
+  }
+  .xp-number { font-size: 72px; font-weight: 900; color: #C8FF00; line-height: 1; }
+  .xp-label { font-size: 24px; color: #888; margin-top: 4px; }
+  .level-badge {
+    background: #C8FF00;
+    color: #000;
+    font-size: 28px;
+    font-weight: 900;
+    padding: 12px 32px;
+    border-radius: 40px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+  .level-sub { font-size: 24px; color: #555; }
+  .progress-bar {
+    background: #111;
+    height: 12px;
+    border-radius: 6px;
+    margin: 24px 0 8px;
+    overflow: hidden;
+  }
+  .progress-fill { height: 100%; background: #C8FF00; border-radius: 6px; width: 68%; }
+  .progress-label { font-size: 22px; color: #555; text-align: right; }
+  .section { padding: 32px 48px; }
+  .section-title { font-size: 36px; font-weight: 800; margin-bottom: 28px; }
+  .section-title span { color: #C8FF00; }
+  .badges-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .badge {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    border-radius: 20px;
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .badge.earned { border-color: #C8FF00; background: #0d1a00; }
+  .badge-icon { font-size: 52px; margin-bottom: 10px; }
+  .badge-name { font-size: 20px; color: #888; font-weight: 600; }
+  .badge-name.earned { color: #C8FF00; }
+  .stats-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .stat-card {
+    flex: 1;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 20px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .stat-number { font-size: 56px; font-weight: 900; color: #C8FF00; line-height: 1; }
+  .stat-label { font-size: 22px; color: #555; margin-top: 8px; }
+  .checkin-item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid #111;
+  }
+  .checkin-dot { width: 12px; height: 12px; background: #C8FF00; border-radius: 50%; flex-shrink: 0; }
+  .checkin-info { flex: 1; }
+  .checkin-name { font-size: 28px; font-weight: 700; }
+  .checkin-venue { font-size: 22px; color: #555; margin-top: 4px; }
+  .checkin-xp { color: #C8FF00; font-size: 24px; font-weight: 700; }
+  .tab-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+    background: #000;
+    border-top: 1px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 30px;
+  }
+  .tab-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .tab-icon { font-size: 44px; }
+  .tab-label { font-size: 20px; color: #555; }
+  .tab-label.active { color: #C8FF00; }
+  .tab-active-dot { width: 6px; height: 6px; background: #C8FF00; border-radius: 50%; }
+</style>
+</head>
+<body>
+<div class="header-label">📘 Earn XP & Unlock Badges</div>
+<div class="status-bar"><span>9:41</span><span>●●●</span></div>
+
+<div class="passport-hero">
+  <div class="passport-title">⚡ Your Passport</div>
+  <div class="xp-ring">
+    <div class="xp-number">1,340</div>
+    <div class="xp-label">Total XP</div>
+  </div>
+  <div class="level-badge">Level 3 — Regular</div>
+  <div class="level-sub">680 XP to Level 4</div>
+  <div class="progress-bar"><div class="progress-fill"></div></div>
+  <div class="progress-label">68% there</div>
+</div>
+
+<div class="section">
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-number">13</div>
+      <div class="stat-label">Check-ins</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">4</div>
+      <div class="stat-label">Badges</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">7</div>
+      <div class="stat-label">Saved</div>
+    </div>
+  </div>
+
+  <div class="section-title"><span>Badges</span> Earned</div>
+  <div class="badges-grid">
+    <div class="badge earned">
+      <div class="badge-icon">🎵</div>
+      <div class="badge-name earned">First Show</div>
+    </div>
+    <div class="badge earned">
+      <div class="badge-icon">🔥</div>
+      <div class="badge-name earned">On Fire</div>
+    </div>
+    <div class="badge earned">
+      <div class="badge-icon">🌙</div>
+      <div class="badge-name earned">Night Owl</div>
+    </div>
+    <div class="badge earned">
+      <div class="badge-icon">⚡</div>
+      <div class="badge-name earned">Electric</div>
+    </div>
+    <div class="badge">
+      <div class="badge-icon">🏆</div>
+      <div class="badge-name">Legend</div>
+    </div>
+    <div class="badge">
+      <div class="badge-icon">🎪</div>
+      <div class="badge-name">Festival</div>
+    </div>
+    <div class="badge">
+      <div class="badge-icon">🌟</div>
+      <div class="badge-name">VIP</div>
+    </div>
+    <div class="badge">
+      <div class="badge-icon">🎸</div>
+      <div class="badge-name">Rocker</div>
+    </div>
+  </div>
+
+  <div class="section-title">Recent <span>Check-ins</span></div>
+  <div class="checkin-item">
+    <div class="checkin-dot"></div>
+    <div class="checkin-info">
+      <div class="checkin-name">Disclosure · Live Set</div>
+      <div class="checkin-venue">Hollywood Palladium · Apr 30</div>
+    </div>
+    <div class="checkin-xp">+100 XP</div>
+  </div>
+  <div class="checkin-item">
+    <div class="checkin-dot"></div>
+    <div class="checkin-info">
+      <div class="checkin-name">Dom Kennedy</div>
+      <div class="checkin-venue">The Wiltern · Apr 28</div>
+    </div>
+    <div class="checkin-xp">+100 XP</div>
+  </div>
+  <div class="checkin-item">
+    <div class="checkin-dot"></div>
+    <div class="checkin-info">
+      <div class="checkin-name">Coachella Weekend 1</div>
+      <div class="checkin-venue">Empire Polo Club · Apr 12</div>
+    </div>
+    <div class="checkin-xp">+100 XP</div>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <div class="tab-item"><div class="tab-icon">🏠</div><div class="tab-label">Discover</div></div>
+  <div class="tab-item"><div class="tab-icon">🎪</div><div class="tab-label">Events</div></div>
+  <div class="tab-item">
+    <div class="tab-icon">📘</div>
+    <div class="tab-label active">Passport</div>
+    <div class="tab-active-dot"></div>
+  </div>
+  <div class="tab-item"><div class="tab-icon">👤</div><div class="tab-label">Profile</div></div>
+</div>
+</body>
+</html>

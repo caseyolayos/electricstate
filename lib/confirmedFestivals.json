@@ -1,0 +1,31 @@
+{
+  "_comment": "Slugs of festivals whose 2026 dates have been verified against official sources. All others show an 'Estimated Dates' disclaimer in the UI.",
+  "confirmed": [
+    "forbidden-kingdom",
+    "dancefestopia",
+    "global-dance-festival",
+    "edc-las-vegas",
+    "edc-las-vegas-weekend-1",
+    "edc-las-vegas-weekend-2",
+    "movement-electronic-music-festival",
+    "beyond-wonderland-chicago",
+    "beyond-wonderland-southern-california",
+    "hard-summer-music-festival",
+    "bass-canyon",
+    "seismic-dance-event",
+    "countdown-nye",
+    "into-the-horizon-festival",
+    "tomorrowland-weekend-1",
+    "tomorrowland-weekend-2",
+    "ultra-europe",
+    "awakenings-festival",
+    "creamfields",
+    "ultra-japan",
+    "edc-korea",
+    "edc-colombia",
+    "edc-thailand",
+    "edc-mexico",
+    "edsea",
+    "edc-orlando"
+  ]
+}
