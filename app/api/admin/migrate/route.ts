@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic'
 
 export async function POST(req: Request) {
   const auth = req.headers.get('authorization') ?? ''
-  if (auth !== 'Bearer es-cron-2026-xT7mQ9p') return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  if (!process.env.MIGRATE_SECRET || auth !== `Bearer ${process.env.MIGRATE_SECRET}`) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   // Run DDL via Supabase's pg connection (service role can do this via the REST SQL endpoint)
   const url = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/rpc/run_migration`
